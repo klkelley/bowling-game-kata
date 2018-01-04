@@ -1,8 +1,9 @@
-package com.company;
+package me.karakelley.bowlinggamekata;
+
 
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello");
+        return;
     }
 }
