@@ -1,66 +1,70 @@
+package me.karakelley.bowlinggamekata;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class BowlingGameTest {
-    private BowlingGame g;
+    private BowlingGame game;
 
     @Before
-    public void setUp() throws Exception {
-        g = new BowlingGame();
+    public void setUp() {
+        game = new BowlingGame();
     }
 
     @Test
-    public void testGutterGame() throws Exception {
+    public void testGutterGame() {
         rollMany(20, 0);
 
-        assertEquals(0, g.score());
+        assertEquals(0, game.score());
     }
 
     @Test
-    public void testAllOnes() throws Exception {
+    public void testAllOnes() {
         rollMany(20, 1);
 
-        assertEquals(20, g.score());
+        assertEquals(20, game.score());
     }
 
     @Test
-    public void testOneSpare() throws Exception {
+    public void testOneSpare() {
         rollSpare();
-        g.roll(3);
+        game.roll(3);
         rollMany(17, 0);
-        assertEquals(16, g.score());
+
+        assertEquals(16, game.score());
     }
 
     @Test
-    public void testOneStrike() throws Exception {
+    public void testOneStrike() {
         rollStrike();
-        g.roll(3);
-        g.roll(4);
+        game.roll(3);
+        game.roll(4);
         rollMany(16, 0);
-        assertEquals(24, g.score());
+
+        assertEquals(24, game.score());
     }
 
     @Test
-    public void rollStrike() throws Exception {
-        g.roll(10);
-    }
-
-    @Test
-    public void testPerfectGame() throws Exception {
+    public void testPerfectGame() {
         rollMany(12, 10);
-        assertEquals(300, g.score());
+        assertEquals(300, game.score());
+
     }
 
-    private void rollMany(int n, int pins) {
-        for (int i = 0; i < n; i++) {
-            g.roll(pins);
+    private void rollMany(int frameIndex, int pins) {
+        for (int i = 0; i < frameIndex; i++) {
+            game.roll(pins);
         }
     }
 
     private void rollSpare() {
-        g.roll(5);
-        g.roll(5);
+        game.roll(5);
+        game.roll(5);
     }
+
+    private void rollStrike() {
+        game.roll(10);
+    }
+
 }
