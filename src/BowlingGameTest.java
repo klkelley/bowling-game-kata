@@ -36,7 +36,7 @@ public class BowlingGameTest {
 
     @Test
     public void testOneStrike() {
-        game.roll(10);
+        rollStrike();
         game.roll(3);
         game.roll(4);
         rollMany(17, 0);
@@ -54,4 +54,8 @@ public class BowlingGameTest {
         game.roll(5);
         game.roll(5);
     }
-}
+
+    private void rollStrike() {
+        game.roll(10);
+    }
+ }
