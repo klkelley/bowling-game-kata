@@ -1,12 +1,18 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class BowlingGameTest {
+    private BowlingGame game;
+
+    @Before
+    public void setUpGame() {
+        game = new BowlingGame();
+    }
 
     @Test
     public void testGutterGame() {
-        BowlingGame game = new BowlingGame();
         for (int i = 0; i < 20; i++) {
             game.roll(0);
         }
@@ -15,11 +21,12 @@ public class BowlingGameTest {
 
     @Test
     public void testAllOnes() {
-        BowlingGame game = new BowlingGame();
         for (int i = 0; i < 20; i++) {
             game.roll(1);
         }
         assertEquals(20, game.score());
     }
+
+
 
 }
