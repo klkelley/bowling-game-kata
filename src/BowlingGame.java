@@ -19,7 +19,7 @@ public class BowlingGame {
                 score += 10 + spareBonus(frameIndex);
                 frameIndex += 2;
             } else {
-                score += rolls[frameIndex] + rolls[frameIndex + 1];
+                score += sumOfBalls(frameIndex);
                 frameIndex += 2;
             }
         }
@@ -40,6 +40,10 @@ public class BowlingGame {
 
     private int spareBonus(int frameIndex) {
         return rolls[frameIndex+2];
+    }
+
+    private int sumOfBalls(int frameIndex) {
+        return rolls[frameIndex] + rolls[frameIndex + 1];
     }
 
 }
