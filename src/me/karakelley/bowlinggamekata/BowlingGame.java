@@ -1,3 +1,5 @@
+package me.karakelley.bowlinggamekata;
+
 public class BowlingGame {
 
     private int rolls[] = new int[21];
