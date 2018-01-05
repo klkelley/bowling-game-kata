@@ -32,7 +32,7 @@ public class BowlingGameTest {
         game.roll(3);
         rollMany(17, 0);
 
-        assertEquals(17, game.score());
+        assertEquals(16, game.score());
     }
 
     private void rollMany(int n, int pins) {
