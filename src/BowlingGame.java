@@ -1,15 +1,17 @@
 public class BowlingGame {
 
-    private int score = 0;
     private int rolls[] = new int[21];
     private int currentRoll = 0;
 
     public void roll(int pins) {
-        score += pins;
         rolls[currentRoll++] = pins;
     }
 
     public int score() {
+        int score = 0;
+        for (int frame = 0; frame < rolls.length; frame++) {
+            score += rolls[frame];
+        }
         return score;
     }
 }
